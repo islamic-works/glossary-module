@@ -1,0 +1,12 @@
+<ActionBar title="Glossary Item" class="action-bar"></ActionBar>
+<DockLayout class="page">
+	<label dock="top" text="Glossary Item" class="header"></label>
+	<FlexboxLayout dock="bottom" class="footer"><ns-menu [active]="active"></ns-menu></FlexboxLayout>
+	<StackLayout dock="left">
+        <div>
+		<Label class="fa-900" [text]="icon"></Label> <Label class="h2" [text]="item.name" textWrap="true"></Label>
+    </div>
+    <Label class="h2" [text]="item.translate" textWrap="true"></Label>
+		<Label class="h4" [text]="item.description" textWrap="true"></Label>
+	</StackLayout>
+</DockLayout>
