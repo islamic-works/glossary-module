@@ -17,14 +17,22 @@ export class ItemDetailComponent implements OnInit {
 
     constructor(
         private page: Page,
-        private glossaryService: GlossaryService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private glossaryService: GlossaryService
     ) { }
 
     ngOnInit(): void {
         this.page.actionBarHidden = true;
-        const id = +this.route.snapshot.params.id;
+
+        let id: number = parseInt(this.route.snapshot.params.id);
+        if (!id) id = this.findIdByTerm(this.route.snapshot.params.term);
+
         this.item = this.glossaryService.getItem(id);
         this.icon = this.glossaryService.getIcon(id);
+    }
+    findIdByTerm(term: string): number {
+        let t: GlossaryItem = this.glossaryService.findIdByTerm(term);
+        if (t) return t.id;
+        else return null;
     }
 }

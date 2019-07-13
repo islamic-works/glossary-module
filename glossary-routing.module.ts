@@ -7,7 +7,8 @@ import { ItemDetailComponent } from "./item-detail.component";
 
 const routes: Routes = [
   { path: "", component: GlossaryComponent },
-  { path: "item/:id", component: ItemDetailComponent },
+  { path: "item/id/:id", component: ItemDetailComponent },
+  { path: "item/term/:term", component: ItemDetailComponent }
 ];
 
 @NgModule({
