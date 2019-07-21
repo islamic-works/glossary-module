@@ -11,4 +11,6 @@ import { ItemDetailComponent } from "./item-detail.component";
   declarations: [GlossaryComponent, ItemDetailComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class GlossaryModule {}
+export class GlossaryModule {
+  version: string = 201907210000;
+}
