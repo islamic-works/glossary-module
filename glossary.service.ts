@@ -21,7 +21,7 @@ export class GlossaryService {
     constructor(private settings: SettingsService) {
         try {
             if (this.settings.debug) console.log("Carregando glossary offline do arquivo!");
-            let glossary = require("../data/glossary.json");
+            let glossary: any = this.settings.getFile("glossary.json");
             this.version = glossary.version;
             this.items = glossary.items;
             if (this.settings.debug) {
@@ -57,7 +57,7 @@ export class GlossaryService {
     }
     /**
      * Retorna o objeto que representa o termo informado;
-     * 
+     *
      * @param term nome do ter mo a ser procurado
      */
     findIdByTerm(term: string): GlossaryItem {
