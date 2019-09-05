@@ -12,6 +12,7 @@ import { Page } from "tns-core-modules/ui/page/page";
     styleUrls: ["./item-detail.component.scss"]
 })
 export class ItemDetailComponent implements OnInit {
+    active: string;
     item: GlossaryItem;
     icon: string;
 
@@ -19,7 +20,12 @@ export class ItemDetailComponent implements OnInit {
         private page: Page,
         private route: ActivatedRoute,
         private glossaryService: GlossaryService
-    ) { }
+    ) {
+
+
+
+        this.active = "radio";
+     }
 
     ngOnInit(): void {
         this.page.actionBarHidden = true;
